@@ -55,32 +55,79 @@
     margin: 20px auto; 
     display: flex;
 }
+.todo-heading{
+    font-size: 1.3rem;
+    color: white;
+    margin:5px 15px;
+    align-self: flex-start;
+}
 .active-todos, .completed-todos {
     width: 47%;
+       /* padding: 10px; */
+       border-radius: 5px;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+}
+.active-todos {
+    background-color: rgb(196, 74, 61);
+    margin-right: 3%;
+}
+.completed-todos {
+    background-color: rgb(61, 196, 162);
+    margin-left: 3%;
 }
 .todoList {
     display: flex;
     flex-direction: column;
-    align-items: normal;
-    justify-content: space-evenly;
+    align-items: center; 
     list-style-type: none;
+    width: 95%; 
 }
 /* TodolistItem component */
-.todoList li { 
-    width: 95%;
+.todoList div { 
+    width: 99%;
     margin: 10px auto;
+    margin-top: 0px;
     flex-direction: row;
-    background-color: rgb(215, 168, 14);
     border-radius: 3px;
+    transition: 0.2s;
+}
+
+.todoList .active{
+    background-color: rgb(215, 168, 14);
+}
+
+.todoList .completed {
+    background-color: #68827f;
+}
+
+.todoList div:hover {
+    transform: scale(1.03);
 }
 
 .listItem {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 20px;
     flex-wrap: nowrap;
 }
-
+.list-item-icons { 
+    display: flex;
+    max-width: 75px;
+    text-align: right;
+    justify-self: flex-end; 
+    margin: 0px; 
+}
+.list-item-text{
+    text-align: left; 
+    margin-right: 10px;
+    max-width: 70%;
+    overflow: hidden; 
+}
+.list-item-input {
+    max-width: 65%; 
+}
  .list-item-icon{
      margin-right: 10px;
      cursor: pointer;
@@ -88,4 +135,19 @@
 
 .list-item-input:focus {
     outline: none;
+}
+
+@media screen and (max-width: 750px) {
+    .todo-container{
+        flex-direction: column;
+        align-items: center;
+    }
+   
+    .active-todos, .completed-todos{
+        width: 97%;
+        margin: 0px;
+    }
+    .active-todos{
+        margin-bottom: 20px;
+    }
 }

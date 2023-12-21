@@ -42,6 +42,7 @@ const TodoListItem: React.FC<listProp> = ({ todo, todos, setTodos }) => {
         inputRef.current?.focus();
     }, [edit]);
 
+
     const inputRef = useRef<HTMLInputElement>(null);
 
     return (
@@ -58,14 +59,14 @@ const TodoListItem: React.FC<listProp> = ({ todo, todos, setTodos }) => {
                             }}
                         ref={inputRef} />
                 ) : !todo.isDone ? (
-                    <span className='list-item-text'>{todo.todo}</span>
+                    <div className='list-item-text'>{todo.todo}</div>
                 ) : (
-                    <span className='list-item-text' style={{ textDecoration: "line-through" }}>{todo.todo}</span>
+                    <div className='list-item-text' style={{ textDecoration: "line-through" }}>{todo.todo}</div>
                 )
             }
             <div className='list-item-icons'>
-                <span className='list-item-icon' onClick={() => setEdit(!edit)}><AiFillEdit /></span>
-                <span className='list-item-icon' onClick={(e) => { handleDelete(e, todo.id) }}><AiFillDelete /></span>
+                <span className='list-item-icon mr' onClick={() => setEdit(!edit)}><AiFillEdit /></span>
+                <span className='list-item-icon mr' onClick={(e) => { handleDelete(e, todo.id) }}><AiFillDelete /></span>
                 <span className='list-item-icon' onClick={(e) => { handleDone(e, todo.id) }}><MdOutlineDownloadDone /></span>
             </div>
         </form>

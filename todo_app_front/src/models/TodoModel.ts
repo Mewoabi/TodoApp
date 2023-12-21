@@ -12,5 +12,5 @@ export interface props {
 
 export interface todoListProps {
     todos: Todo[], 
-    setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+    setTodos: React.Dispatch<React.SetStateAction<Todo[]>>; 
 }
